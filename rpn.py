@@ -5,12 +5,16 @@ import operator
 def eat_my_carat(a, b):
     return a ** b
 
+def talk(a, b):
+    return "hi student"
+
 operators = {
     '+': operator.add,
     '-': operator.sub,
     '*': operator.mul,
     '/': operator.truediv,
-    '^': eat_my_carat
+    '^': eat_my_carat,
+    'talk': talk,
 }
 
 def calculate(myarg):
