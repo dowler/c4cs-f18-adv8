@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import operator
-
+import random
 def eat_my_carat(a, b):
     return a ** b
 
@@ -15,13 +15,18 @@ operators = {
     '/': operator.truediv,
     '^': eat_my_carat,
     'talk': talk,
+    
 }
 
 def calculate(myarg):
     stack = list()
     for token in myarg.split():
         try:
-            token = int(token)
+            if token == 'random':
+                token = random.randint(0,1000)
+            else:
+                token = int(token)
+            
             stack.append(token)
         except ValueError:
             function = operators[token]
